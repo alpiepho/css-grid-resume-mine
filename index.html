@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      Al Piepho Resume
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function toggleBoxes() {
+        var list = document.getElementsByClassName("box");
+        //console.log(list);
+        //console.log(list.length);
+        for (var i = 0; i < list.length; i++) {
+          if (list[i].style.boxShadow == "none") {
+            list[i].style.boxShadow = "0 5px 9px 0 rgba(0, 0, 0, 0.35)"
+          }
+          else {
+            list[i].style.boxShadow = "none"
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="body">
+    <button class="boxes-button" onclick="toggleBoxes()">toggle boxes</button>
+
+    <article class="resume">
+      <section class="box header">
+        <!-- <section>HEADER</section> -->
+        <section class="box header_fullname">AL PIEPHO</section>
+        <section class="box header_contact">
+          <!-- <section>CONTACT</section> -->
+          C:​ ​(NNN) NNN-NNNN &nbsp;|&nbsp; ​A:​ ​Fort Collins, CO &nbsp;|&nbsp; E:​ ​alpiepho@gmail.com​ &nbsp;|&nbsp; ​LI:​ ​linkedin.com/in/al-piepho-fw-sw-engineer
+        </section>
+        <hr class="header_contact_hr" />
+      </section>
+
+      <section class="box overview">
+        <section class="box overview_titlearea">
+          <!-- <section>TITLEAREA</section> -->
+          <section class="box overview_titlearea_title">
+            Firmware Developer
+          </section>
+          <section class="box overview_titlearea_subtitle">
+            <!-- <section>SUBTITLE</section> -->
+            Firmware &nbsp;&bull;&nbsp; Embedded Software &nbsp;&bull;&nbsp; Automation
+            &nbsp;&bull;&nbsp; IOT
+          </section>
+        </section>
+
+        <section class="box overview_summaryarea">
+          <!-- <section>SUMMARYAREA</section> -->
+          <section class="box overview_summaryarea_description">
+            Seeking a collaborative team that values innovation, and management with vision and strategic direction.
+          </section>
+          <section class="box overview_summaryarea_list">
+            <!-- <section>SUMMARYLIST</section> -->
+            <section class="box overview_summaryarea_list_item">
+              Strong background in embedded systems
+            </section>
+            <section class="box overview_summaryarea_list_item">
+              The generalist that can dive into most levels of the software stack and succeed
+            </section>
+            <section class="box overview_summaryarea_list_item">
+              Very good at ramping up on new code base, automating and debugging
+            </section>
+            <section class="box overview_summaryarea_list_item">
+              Life-long learner and self-starter
+            </section>
+          </section>
+        </section>
+
+        <section class="box overview_qualificationsarea">
+          <!-- <section>QUALIFICATIONSAREA</section> -->
+          <section class="box overview_qualificationsarea_title">
+            QUALIFICATIONS
+          </section>
+          <section class="box overview_qualificationsarea_list">
+            <!-- <section>QUALIFICATIONSLIST</section> -->
+            <!-- NOTE: list these in priority order, css grid will re-arrange -->
+            <section class="box overview_qualificationsarea_list_item">
+              Software design
+            </section>
+            <section class="box overview_qualificationsarea_list_item">
+              Troubleshooting and debug
+            </section>
+            <section class="box overview_qualificationsarea_list_item">
+              Systems testing and QA
+            </section>
+            <section class="box overview_qualificationsarea_list_item">
+              C/C++ programming 
+            </section>
+            <section class="box overview_qualificationsarea_list_item">
+              Script programming
+            </section>
+            <section class="box overview_qualificationsarea_list_item">
+              Driven, hardworking, yet flexible
+            </section>
+            <section class="box overview_qualificationsarea_list_item">
+              Passionate about user needs
+            </section>
+            <section class="box overview_qualificationsarea_list_item">
+              Work for customers
+            </section>
+            <section class="box overview_qualificationsarea_list_item">
+              Agile methodologies
+            </section>
+          </section>
+        </section>
+
+        <section class="box overview_skillsarea">
+          <!-- <section>SKILLSAREA</section> -->
+          <section class="box overview_skillsarea_title">
+            SKILLS
+          </section>
+          <section class="box overview_skillsarea_list">
+            <!-- <section>SKILLSLIST</section> -->
+            <section class="box overview_skillsarea_list_line_of4">
+              <section class="box overview_skillsarea_list_item">
+                C/C++
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Python
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Bash
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                ASM
+              </section>
+            </section>
+            <section class="box overview_skillsarea_list_line_of3">
+              <section class="box overview_skillsarea_list_item">
+                Git
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Visual Studio Code
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Vi
+              </section>
+            </section>
+            <section class="box overview_skillsarea_list_line_of6">
+              <section class="box overview_skillsarea_list_item">
+                APIs
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                JSON
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                REST
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                XML
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Modbus
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                USB
+              </section>
+            </section>
+            <section class="box overview_skillsarea_list_line_of4">
+              <section class="box overview_skillsarea_list_item">
+                Linux
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                RTOS
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Mac
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Windows
+              </section>
+            </section>
+            <section class="box overview_skillsarea_list_line_of3">
+              <section class="box overview_skillsarea_list_item">
+                HTML
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                CSS
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Javascript
+              </section>
+            </section>
+            <section class="box overview_skillsarea_list_line_of4">
+              <section class="box overview_skillsarea_list_item">
+                React
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Gatsby
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Node
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                jQuery
+              </section>
+            </section>
+            <section class="box overview_skillsarea_list_line_of3">
+              <section class="box overview_skillsarea_list_item">
+                Headless Chrome
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Selenium
+              </section>
+              <section class="box overview_skillsarea_list_item">
+                Jenkins
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <section class="box workhistory">
+        <section class="workhistory_label">WORK HISTORY</section>
+        <hr class="workhistory_hr" />
+        <!-- <section>WORKHISTORY</section> -->
+        <section class="box workhistory_list">
+          <section class="box workhistory_entry">
+            <!-- <section>WORKENTRY</section> -->
+            <section class="workhistory_entry_header">
+              <section class="workhistory_entry_title">
+                BROADCOM LTD ​| Fort Collins, CO
+              </section>
+              <section class="workhistory_entry_title_pad"></section>
+              <section class="workhistory_entry_subtitle">R&D Engineer</section>
+              <section class="workhistory_entry_dates">09/​2019 – Present</section>
+            </section>
+            <section class="workhistory_entry_list">
+              <section class="box workhistory_entry_item">
+                &bull; Responsible for Jenkins CI/CD and test benches for High Speed Serdes ASIC development
+              </section>
+              <section class="box workhistory_entry_item">
+                &bull; Triage and fix Serdes regression test failures
+              </section>
+              <section class="box workhistory_entry_item">
+                &bull; Brought knowledge from Web Development to fix and expand Python based Web Server
+              </section>
+            </section>
+          </section>
+
+          <section class="box workhistory_entry">
+            <!-- <section>WORKENTRY</section> -->
+            <section class="workhistory_entry_header">
+              <section class="workhistory_entry_title">
+                “LEARNING SABBATICAL”  |  Ft. Collins, CO
+              </section>
+              <section class="workhistory_entry_title_pad"></section>
+              <section class="workhistory_entry_subtitle">Skills Development and Exploration</section>
+              <section class="workhistory_entry_dates">06/2019 – 09/2019</section>
+              </section>
+            </section>
+            <section class="workhistory_entry_subtitle">Preparing for next role in firmware or software development while allocating time for family needs
+              <section class="workhistory_entry_list">
+              <section class="box workhistory_entry_item">
+                &bull; Various Node/Javascript and Python projects
+              </section>
+              <section class="box workhistory_entry_item">
+                &bull; Continued study of IOT systems, Azure, AWS
+              </section>
+              <section class="box workhistory_entry_item">
+                &bull; Investigation of CI/CD systems, Jenkins, GitPrime, GitHub Actions
+              </section>
+            </section>
+          </section>
+
+          <section class="box workhistory_entry">
+            <!-- <section>WORKENTRY</section> -->
+            <section class="workhistory_entry_header">
+              <section class="workhistory_entry_title">
+                HACH CHEMICAL  (DANAHER CORPORATION)  |  Loveland, CO	
+              </section>
+              <section class="workhistory_entry_title_pad"></section>
+              <section class="workhistory_entry_subtitle">Firmware/Software Engineer</section>
+              <section class="workhistory_entry_dates">12/2017 – 06/2019 </section>
+            </section>
+            <section class="workhistory_entry_list">
+              <section class="box workhistory_entry_item">
+                &bull; Designed prototype IOT system connecting legacy water products to Azure cloud
+              </section>
+              <section class="box workhistory_entry_item">
+                &bull; Developed firmware and UI for water analyzers with reliability that exceeds the current products
+              </section>
+              <section class="box workhistory_entry_item">
+                &bull; Improved team effectiveness by implementing test and build automation tools in Javascript and Python
+              </section>
+            </section>
+          </section>
+
+          <section class="box workhistory_entry">
+            <!-- <section>WORKENTRY</section> -->
+            <section class="workhistory_entry_header">
+              <section class="workhistory_entry_title">
+                AVAGO TECHNOLOGIES  |  Fort Collins, CO
+              </section>
+              <section class="workhistory_entry_title_pad"></section>
+              <section class="workhistory_entry_subtitle">Senior Firmware Engineer</section>
+              <section class="workhistory_entry_dates">01/2013 – 04/2017</section>
+            </section>
+            <section class="workhistory_entry_list">
+              <section class="box workhistory_entry_item">
+                &bull; Designed and implemented low level, efficient FW for several SERDES (serialize/deserialize) ASICs used in very high speed computer interfaces such as Ethernet, SAS/SATA
+              </section>
+              <section class="box workhistory_entry_item">
+                &bull; 3 years coding with Ruby and Java, including complex area of marshaling to Native C as part of a test tool
+              </section>
+              <section class="box workhistory_entry_item">
+                &bull; Tackled the tough problems, such as recovering memory, and improving existing debug tools
+              </section>
+            </section>
+          </section>
+
+          <section class="box workhistory_entry">
+            <!-- <section>WORKENTRY</section> -->
+            <section class="workhistory_entry_header">
+              <section class="workhistory_entry_title">
+                SCHNEIDER-ELECTRIC  (PELCO)  |  Fort Collins, CO
+              </section>
+              <section class="workhistory_entry_title_pad"></section>
+              <section class="workhistory_entry_subtitle">Firmware/Software Engineer</section>
+              <section class="workhistory_entry_dates">08/2008 – 01/2013</section>
+            </section>
+            <section class="workhistory_entry_list">
+              <section class="box workhistory_entry_item">
+                &bull; Integrated third party video analytics SW into existing digital video product, allowing competition in new market segment so that edge devices could detect events in the video
+              </section>
+            </section>
+          </section>
+
+          <section class="box workhistory_entry">
+            <!-- <section>WORKENTRY</section> -->
+            <section class="workhistory_entry_header">
+              <section class="workhistory_entry_title">
+                HEWLETT-PACKARD COMPANY  |  Northern Colorado
+              </section>
+              <section class="workhistory_entry_title_pad"></section>
+              <section class="workhistory_entry_subtitle">Firmware Engineer - Consumer Imaging Products</section>
+              <section class="workhistory_entry_dates">01/2003 – 08/2008</section>
+            </section>
+            <section class="workhistory_entry_list">
+              <section class="box workhistory_entry_item">
+                &bull; Local expert in key areas: performance and embedded code/memory usage
+              </section>
+              <section class="box workhistory_entry_item">
+                &bull; Reduced effective camera startup time from 5 seconds to under 1 second
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <section class="box education">
+        <section class="education_label">EDUCATION</section>
+        <hr class="education_hr" />
+        <!-- <section>EDUCATION</section> -->
+        <section class="box education_list">
+          <section class="box education_entry">
+            <!-- <section>EDUCATIONENTRY</section> -->
+            <section class="education_entry_header">
+              <section class="education_entry_title">
+                UNIVERSITY OF COLORADO  |  Boulder, CO
+              </section>
+              <section class="education_entry_subtitle">
+                Bachelor of Science, Electrical Engineering
+              </section>
+            </section>
+          </section>
+
+          <section class="box education_entry">
+            <!-- <section>EDUCATIONENTRY</section> -->
+            <section class="education_entry_header">
+              <section class="education_entry_title">
+                IOWA STATE UNIVERSITY  |  Ames, IA
+              </section>
+              <section class="education_entry_subtitle">
+                Bachelor of Science, Computer Science
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <section class="box learning">
+        <section class="learning_label">LEARNING</section>
+        <hr class="learning_hr" />
+        <!-- <section>LEARNING</section> -->
+        <section class="box learning_list">
+          <section class="box learning_entry">
+            <!-- <section>LEARNINGENTRY</section> -->
+            <section class="learning_entry_header">
+              <section class="learning_entry_title">
+                PROJECT PORTFOLIO SITE  |  alpiepho.github.io/project-portfolio2/
+              </section>
+              <section class="learning_entry_subtitle">
+                My ongoing portfolio site showing both work and personal projects.  Also serves as an example of something built with React and Gatsby...and it is a PWA (Progress Web App)
+              </section>
+            </section>
+          </section>
+
+          <section class="box learning_entry">
+            <!-- <section>LEARNINGENTRY</section> -->
+            <section class="learning_entry_header">
+              <section class="learning_entry_title">
+                MY BLOG  |  alpiepho.github.io/my-blog/
+              </section>
+              <section class="learning_entry_subtitle">
+                My ongoing blog site.  This is built with React and Gatsby.
+              </section>
+            </section>
+          </section>
+
+          <section class="box learning_entry">
+            <!-- <section>LEARNINGENTRY</section> -->
+            <section class="learning_entry_header">
+              <section class="learning_entry_title">
+                PODCAST “FREAK”
+              </section>
+              <section class="learning_entry_subtitle">
+                Follow 50+ Podcasts, mostly Software Engineering, Javascript/Python, and lately Practical AI
+
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <section class="box awards">
+        <section class="awards_label">AWARDS</section>
+        <hr class="awards_hr" />
+        AWARDS
+        <!-- <section>AWARDS</section> -->
+        <section class="box awards_list">
+          <section class="box award_entry">
+            Co-Author on 6 U.S. Patents, see LinkedIn page for full details
+          </section>
+          <section class="box award_entry">&nbsp;</section>
+          <section class="box award_entry">
+            Automatic Configuration System and Method, Jun 8, 2010, us 7,734,735
+          </section>
+          <section class="box award_entry">
+            Automatic Media Readying System and Method, May 15, 2007, us 7,219,190
+          </section>
+          <section class="box award_entry">
+            Automatic Media Readying System and Method, Dec 27, 2005, us 6,981,092
+          </section>
+          <section class="box award_entry">
+            System of/and Method for Configuring an Automatic Appliance, Mar 9, 2004, us 6,704,401
+          </section>
+          <section class="box award_entry">
+            Written Sector Management on Write Once Magneto-Optic Media, Dec 12, 1995, us 5,475,820
+          </section>
+          <section class="box award_entry">
+            Blank Sector Detection on Write Once Magneto-Optic Media, Nov 23, 1993, us 7,734,735
+          </section>
+        </section>
+      </section>
+    </article>
+  </body>
+</html>
