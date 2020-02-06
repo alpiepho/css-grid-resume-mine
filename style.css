@@ -18,7 +18,7 @@ priority5 priority8 priority6
 */
 
 .box {
-  margin: 5px;
+  margin: 0px;
   padding: 5px;
   /* DEBUG: uncomment to see boxes around pieces */
   //box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.35);
@@ -81,9 +81,9 @@ priority5 priority8 priority6
   /* background-color: gray; */
   background-color: #9BBB59;
   width: 102%;
-  height: 2px;
+  height: 1px;
   margin-left: -10px;
-
+  margin-top: -4px;
 }
 
 .overview {
@@ -109,11 +109,17 @@ priority5 priority8 priority6
 .overview_titlearea_title {
   grid-area: overview_titlearea_title;
   margin: auto; /* center horizontally */
+  font-size: 20pt;
+  font-weight: bold;
+  color: #818181;
 }
 
 .overview_titlearea_subtitle {
   grid-area: overview_titlearea_subtitle;
   margin: auto; /* center horizontally */
+  font-size: 16pt;
+  font-weight: bold;
+  color: #818181;
 }
 
 /* OVERVIEW SUMMARY AREA */
@@ -141,10 +147,12 @@ priority5 priority8 priority6
 
 .overview_summaryarea_list_item {
   margin: 0px;
+  padding: 2px;
 }
 
 .overview_summaryarea_list_item:before {
   content: "\2022";
+  font-weight: bold;
 }
 
 /* OVERVIEW QUALIFICATIONS AREA */
