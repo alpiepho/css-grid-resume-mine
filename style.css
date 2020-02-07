@@ -3,19 +3,8 @@
 /* NOTE: columns/rows need to match area */
 /* NOTE: no duplicate area-names in the area section */
 /* NOTE: leaving empty class css, allows for easier browser tweaks */
+/* NOTE: had to use &nbsp; to make skills with | to look good */
 
-/* 
-NOTE: psychologically a reader tends to read a multi line table as 
-1) row one left to right
-2) column one top to bottom
-3) item at bottom-right
-Take away is to order your more important items as such
-example for 3x3 order as:
-priority1 priority2 priority3
-priority4 priority9 priority7
-priority5 priority8 priority6
-(my guess for priority7-9)
-*/
 
 .box {
   margin: 0px;
@@ -170,6 +159,9 @@ priority5 priority8 priority6
 .overview_qualificationsarea_title {
   grid-area: overview_qualificationsarea_title;
   margin: auto; /* center horizontally */
+  font-size: 14pt;
+  font-weight: bold;
+  color: #818181;
 }
 
 .overview_qualificationsarea_list {
@@ -207,6 +199,9 @@ priority5 priority8 priority6
 .overview_skillsarea_title {
   grid-area: overview_skillsarea_title;
   margin: auto; /* center horizontally */
+  font-size: 14pt;
+  font-weight: bold;
+  color: #818181;
 }
 
 .overview_skillsarea_list {
@@ -218,6 +213,30 @@ priority5 priority8 priority6
 }
 
 .overview_skillsarea_list_item {
+  margin: 0px;
+  padding: 0px;
+}
+
+.overview_skillsarea_list_item_bar {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.overview_skillsarea_list_item_bar:after {
+  content: "||";
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
 }
 
 .overview_skillsarea_list_line_of1 {
@@ -259,6 +278,13 @@ priority5 priority8 priority6
   margin: auto; /* center horizontally */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0px;
+}
+
+.overview_skillsarea_list_line_of7 {
+  margin: auto; /* center horizontally */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 0px;
 }
 
