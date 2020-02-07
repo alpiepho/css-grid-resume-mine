@@ -5,7 +5,6 @@
 /* NOTE: leaving empty class css, allows for easier browser tweaks */
 /* NOTE: had to use &nbsp; to make skills with | to look good */
 
-
 .box {
   margin: 0px;
   padding: 5px;
@@ -35,8 +34,13 @@
     "education"
     "learning"
     "awards";
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 10pt;
+}
+
+.page_break {
+  display: none;
 }
 
 .header {
@@ -62,13 +66,13 @@
 }
 
 .header_contact_symbol {
-  color: #9BBB59;
+  color: #9bbb59;
   font-weight: bolder;
 }
 
 .header_contact_hr {
   /* background-color: gray; */
-  background-color: #9BBB59;
+  background-color: #9bbb59;
   width: 102%;
   height: 1px;
   margin-left: -10px;
@@ -222,7 +226,6 @@
   padding: 0px;
 }
 
-
 .overview_skillsarea_list_item_bar:after {
   content: "||";
 }
@@ -294,16 +297,17 @@
 }
 .workhistory_label {
   /* background-color: gray; */
-  background-color: #9BBB59;
+  background-color: #9bbb59;
   color: white;
-  width: 25%;
-  padding: 10px;
+  font-weight: bold;
+  width: 20%;
+  padding: 6px;
   margin-bottom: -10px;
   margin-left: -10px;
 }
 .workhistory_hr {
   background-color: gray;
-  background-color: #9BBB59;
+  background-color: #9bbb59;
   width: 102%;
   height: 2px;
   margin-left: -10px;
@@ -325,6 +329,10 @@
 .workhistory_entry_title {
 }
 
+.workhistory_entry_title_name {
+  color: #818181;
+}
+
 .workhistory_entry_title_pad {
   text-align: right;
 }
@@ -340,6 +348,8 @@
 }
 
 .workhistory_entry_item {
+  margin: 0px;
+  padding: 2px;
 }
 
 .education {
@@ -348,18 +358,19 @@
 
 .education_label {
   /* background-color: gray; */
-  background-color: #9BBB59;
-   color: white;
-  width: 25%;
-  padding: 10px;
+  background-color: #9bbb59;
+  color: white;
+  font-weight: bold;
+  width: 20%;
+  padding: 6px;
   margin-bottom: -10px;
   margin-left: -10px;
 }
 
 .education_hr {
   /* background-color: gray; */
-  background-color: #9BBB59;
-   width: 102%;
+  background-color: #9bbb59;
+  width: 102%;
   height: 2px;
   margin-left: -10px;
 }
@@ -379,6 +390,10 @@
 .education_entry_title {
 }
 
+.education_entry_title_name {
+  color: #818181;
+}
+
 .education_entry_subtitle {
 }
 
@@ -387,17 +402,18 @@
 }
 .learning_label {
   /* background-color: gray; */
-  background-color: #9BBB59;
-   color: white;
-  width: 25%;
-  padding: 10px;
+  background-color: #9bbb59;
+  color: white;
+  font-weight: bold;
+  width: 20%;
+  padding: 6px;
   margin-bottom: -10px;
   margin-left: -10px;
 }
 .learning_hr {
   /* background-color: gray; */
-  background-color: #9BBB59;
-   width: 102%;
+  background-color: #9bbb59;
+  width: 102%;
   height: 2px;
   margin-left: -10px;
 }
@@ -417,6 +433,10 @@
 .learning_entry_title {
 }
 
+.learning_entry_title_name {
+  color: #818181;
+}
+
 .learning_entry_subtitle {
 }
 
@@ -425,17 +445,18 @@
 }
 .awards_label {
   /* background-color: gray; */
-  background-color: #9BBB59;
-   color: white;
-  width: 25%;
-  padding: 10px;
+  background-color: #9bbb59;
+  color: white;
+  font-weight: bold;
+  width: 20%;
+  padding: 6px;
   margin-bottom: -10px;
   margin-left: -10px;
 }
 .awards_hr {
   /* background-color: gray; */
-  background-color: #9BBB59;
-   width: 102%;
+  background-color: #9bbb59;
+  width: 102%;
   height: 2px;
   margin-left: -10px;
 }
@@ -444,6 +465,8 @@
 }
 
 .awards_entry {
+  margin: 0px;
+  padding: 2px;
 }
 
 .awards_entry_header {
@@ -457,7 +480,6 @@
 
 .awards_entry_subtitle {
 }
-
 
 /* @media (min-width: 1200px) {
   .resume {
@@ -477,14 +499,19 @@
   .boxes-button {
     display: none;
   }
-  
+
   .box {
     box-shadow: none;
   }
+
+  .page_break {
+    display: block;
+  }  
 }
 
 @page {
   padding: 0;
   margin: 0cm;
   size: A4 portrait;
+
 }
