@@ -14,3 +14,4 @@ size displays.  For Mobile, the site is displayed mostly veritical.  For
 web browsers, it is a normal page with some action buttons (possibly a drop down in the furure).  For printing, the action buttons are removed, etc.
 
 My hope is that the origianl template and this concrete example will be useful for others to copy/clone and add their own online resume.
+
