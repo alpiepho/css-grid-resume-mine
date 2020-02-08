@@ -27,9 +27,10 @@ body {
 .menu-button {
   border: none;
   min-width: 40px;
+  color: #aaaaaa;
 }
 
-.menu-option-button:focus {
+.menu-button:focus {
   outline: 0;
 }
 
@@ -37,9 +38,10 @@ body {
   border: none;
   min-width: 40px;
   padding: 5px;
+  color: #aaaaaa;
 }
 
-.menu-button:focus {
+.menu-option-button:focus {
   outline: 0;
 }
 
@@ -522,6 +524,21 @@ body {
     grid-gap: 5px;
   }
 } */
+
+@media only screen and (max-width: 600px) {
+  .overview_qualificationsarea_list {
+    grid-area: overview_qualificationsarea_list;
+    margin: auto; /* center horizontally */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 0px;
+  }
+  .overview_qualificationsarea_list_item:after {
+    content: "";
+  }
+  
+}
 
 @media print {
   /* remove any screen only styles, for example link underline */
