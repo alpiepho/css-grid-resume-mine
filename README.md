@@ -15,3 +15,8 @@ web browsers, it is a normal page with some action buttons (possibly a drop down
 
 My hope is that the origianl template and this concrete example will be useful for others to copy/clone and add their own online resume.
 
+## TODO
+
+- clean up annimation (more subtle)
+- fix borders on hr lines
+- try fun annimation
