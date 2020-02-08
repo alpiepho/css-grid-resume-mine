@@ -7,7 +7,7 @@
 Deployed on GitHub pages [here](https://alpiepho.github.io/css-grid-resume-mine/).
 
 
-This is current resume converted to the [css-grid-resume project](https://github.com/alpiepho/css-grid-resume-mine) I recently started.
+This is my own resume, converted to the [css-grid-resume project](https://github.com/alpiepho/css-grid-resume) I project recently started.
 
 This is a responsive web application, with different formatting for various
 size displays.  For Mobile, the site is displayed mostly veritical.  For
