@@ -5,6 +5,8 @@
 /* NOTE: leaving empty class css, allows for easier browser tweaks */
 /* NOTE: had to use &nbsp; to make skills with | to look good */
 
+/* using a green color #9bbb59 */
+
 body {
 }
 
@@ -236,94 +238,19 @@ body {
   grid-area: overview_skillsarea_list;
   margin: auto; /* center horizontally */
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 0px;
 }
 
 .overview_skillsarea_list_item {
   margin: 0px;
-  padding: 0px;
+  padding: 4px;
 }
 
-.overview_skillsarea_list_item_bar {
-  margin: 0px;
-  padding: 0px;
-}
-
-.overview_skillsarea_list_item_bar:after {
-  content: "|";
-}
-
-.right {
-  text-align: right;
-}
-
-.left {
-  text-align: left;
-}
-
-.center {
-  text-align: center;
-}
-
-.overview_skillsarea_list_line_of1 {
-  margin: auto; /* center horizontally */
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 0px;
-  padding: 2px;
-}
-
-.overview_skillsarea_list_line_of2 {
-  margin: auto; /* center horizontally */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0px;
-  padding: 2px;
-}
-
-.overview_skillsarea_list_line_of3 {
-  margin: auto; /* center horizontally */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 0px;
-  padding: 2px;
-}
-
-.overview_skillsarea_list_line_of4 {
-  margin: auto; /* center horizontally */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 0px;
-  padding: 2px;
-}
-
-.overview_skillsarea_list_line_of5 {
-  margin: auto; /* center horizontally */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 0px;
-  padding: 2px;
-}
-
-.overview_skillsarea_list_line_of6 {
-  margin: auto; /* center horizontally */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 0px;
-  padding: 2px;
-}
-
-.overview_skillsarea_list_line_of7 {
-  margin: auto; /* center horizontally */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 0px;
-  padding: 2px;
-}
 
 /* WORK HISTORY */
 .workhistory {
+  margin-top: 30px;
   grid-area: workhistory;
 }
 .workhistory_label {
