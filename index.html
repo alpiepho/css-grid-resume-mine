@@ -12,6 +12,18 @@
       defer
     ></script>
     <script>
+      function enableBoxes() {
+        var list = document.getElementsByClassName("box");
+        //console.log(list);
+        //console.log(list.length);
+        for (var i = 0; i < list.length; i++) {
+          if (list[i].style.boxShadow == "none") {
+            list[i].style.boxShadow = "0 5px 9px 0 rgba(0, 0, 0, 0.35)";
+          } else {
+            list[i].style.boxShadow = "none";
+          }
+        }
+      }
       function toggleBoxes() {
         var list = document.getElementsByClassName("box");
         //console.log(list);
@@ -28,31 +40,23 @@
         var body = document.body;
         if (body.classList.contains("dark")) {
           body.classList.remove("dark");
-        }
-        else {
+        } else {
           body.classList.add("dark");
         }
       }
     </script>
   </head>
   <body class="body">
-    <div class="boxes-button" x-data="{ open: false }">
+    <div class="menu-button" x-data="{ open: false }">
       <!-- hamburger menu button -->
-      <button class="boxes-button" @click="open = true">
-        <hr />
-        <hr />
-        <hr />
-      </button>
-
+      <button class="menu-button" @click="open = true">Menu</button>
       <ul x-show="open" @click.away="open = false">
-        <div>
-          <button class="boxes-button" onclick="toggleBoxes()">
-            toggle boxes
-          </button>
-        </div>
-        <div>
-          <button class="boxes-button" onclick="toggleDark()">dark mode</button>
-        </div>
+        <button class="menu-option-button" onclick="toggleBoxes()">
+          toggle boxes
+        </button>
+        <button class="menu-option-button" onclick="toggleDark()">
+          dark mode
+        </button>
       </ul>
     </div>
     <article class="resume">

@@ -24,17 +24,22 @@ body {
   box-shadow: none;
 }
 
-.boxes-button {
+.menu-button {
   border: none;
   min-width: 40px;
 }
 
-.boxes-button hr {
-  height: 2px;
-  background-color: black;
+.menu-option-button:focus {
+  outline: 0;
 }
 
-.boxes-button:focus {
+.menu-option-button {
+  border: none;
+  min-width: 40px;
+  padding: 5px;
+}
+
+.menu-button:focus {
   outline: 0;
 }
 
