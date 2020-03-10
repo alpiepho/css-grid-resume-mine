@@ -17,6 +17,4 @@ My hope is that the origianl template and this concrete example will be useful f
 
 ## TODO
 
-- clean up annimation (more subtle)
-- fix borders on hr lines
 - try fun annimation
