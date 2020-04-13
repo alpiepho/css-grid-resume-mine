@@ -17,7 +17,7 @@ annimation plan:
   --theme-color: #9bbb59; /* using a green color */
   --background-color: white;
   --color: black;
-  --label-color: #818181;
+  --label-color: #444444;
 }
 
 body {
@@ -44,7 +44,7 @@ a {
 .menu-button {
   border: none;
   min-width: 40px;
-  color: #aaaaaa;
+  color: #444444;
 }
 
 .menu-button:focus {
@@ -55,7 +55,7 @@ a {
   border: none;
   min-width: 40px;
   padding: 5px;
-  color: #aaaaaa;
+  color: #444444;
 }
 
 .menu-option-button:focus {
