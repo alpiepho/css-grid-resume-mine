@@ -112,7 +112,7 @@ a {
 }
 
 .header_contact_symbol {
-  color: var(--theme-color);
+  color: var(--theme-color-inner);
   font-weight: bolder;
 }
 
