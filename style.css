@@ -15,9 +15,11 @@ annimation plan:
 
 :root {
   --theme-color: #8dc028; /* #9bbb59 using a green color */
+  --theme-color-inner: black;
   --background-color: white;
   --color: black;
   --label-color: #444444;
+
 }
 
 body {
@@ -291,7 +293,7 @@ a {
 .workhistory_label {
   /* background-color: gray; */
   background-color: var(--theme-color);
-  color: white;
+  color: var(--theme-color-inner);
   font-weight: bold;
   width: 20%;
   padding: 6px;
@@ -354,7 +356,7 @@ a {
 .education_label {
   /* background-color: gray; */
   background-color: var(--theme-color);
-  color: white;
+  color: var(--theme-color-inner);
   font-weight: bold;
   width: 20%;
   padding: 6px;
@@ -399,7 +401,7 @@ a {
 .learning_label {
   /* background-color: gray; */
   background-color: var(--theme-color);
-  color: white;
+  color: var(--theme-color-inner);
   font-weight: bold;
   width: 20%;
   padding: 6px;
@@ -443,7 +445,7 @@ a {
 .awards_label {
   /* background-color: gray; */
   background-color: var(--theme-color);
-  color: white;
+  color: var(--theme-color-inner);
   font-weight: bold;
   width: 20%;
   padding: 6px;
