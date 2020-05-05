@@ -15,6 +15,12 @@ web browsers, it is a normal page with some action buttons (possibly a drop down
 
 My hope is that the origianl template and this concrete example will be useful for others to copy/clone and add their own online resume.
 
+## Local Test of index.html
+
+- cd .
+- python -m SimpleHTTPServer 8080
+- open http://localhost:8080/
+
 ## TODO
 
 - try fun annimation

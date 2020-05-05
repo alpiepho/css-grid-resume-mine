@@ -86,7 +86,7 @@ a {
 .header {
   grid-area: header;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: wfr;
   grid-template-areas:
     "header_fullname"
     "header_contact";
@@ -281,7 +281,8 @@ a {
 
 .overview_skillsarea_list_item {
   margin: 0px;
-  padding: 4px;
+  padding: 8px;
+  min-width: 100px;
 }
 
 
@@ -561,7 +562,20 @@ a {
 
   .page_break {
     display: block;
-  }  
+  }
+
+  .workhistory {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .overview_skillsarea_list_item {
+    padding: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  
 }
 
 @page {

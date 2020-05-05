@@ -32,6 +32,10 @@
           }
         }
       }
+      function gitHub() {
+        window.open( 
+              "https://github.com/alpiepho/css-grid-resume-mine", "_blank");
+      }
       function toggleBoxes() {
         var list = document.getElementsByClassName("box");
         //console.log(list);
@@ -62,6 +66,9 @@
       <!-- hamburger menu button -->
       <button class="menu-button" @click="open = true">Menu</button>
       <ul x-show="open" @click.away="open = false">
+        <button class="menu-option-button" onclick="gitHub()">
+          Github Repo
+        </button>
         <button class="menu-option-button" onclick="toggleBoxes()">
           Toggle Boxes
         </button>
@@ -191,7 +198,7 @@
               Git
             </section>
             <section class="box overview_skillsarea_list_item">
-              VS Code
+              VSCode
             </section>
             <section class="box overview_skillsarea_list_item">
               Vi
@@ -221,19 +228,13 @@
               RTOS
             </section>
             <section class="box overview_skillsarea_list_item">
-              Mac
-            </section>
-            <section class="box overview_skillsarea_list_item">
-              Windows
-            </section>
-            <section class="box overview_skillsarea_list_item">
               HTML
             </section>
             <section class="box overview_skillsarea_list_item">
               CSS
             </section>
             <section class="box overview_skillsarea_list_item">
-              Javascript
+              JS
             </section>
             <section class="box overview_skillsarea_list_item">
               React
@@ -242,13 +243,13 @@
               Gatsby
             </section>
             <section class="box overview_skillsarea_list_item">
-              Node
+              Node.js
             </section>
             <section class="box overview_skillsarea_list_item">
               jQuery
             </section>
             <section class="box overview_skillsarea_list_item">
-              Headless Chrome
+              Puppeteer
             </section>
             <section class="box overview_skillsarea_list_item">
               Selenium
@@ -281,6 +282,9 @@
             <section class="workhistory_entry_list">
               <section class="box workhistory_entry_item">
                 &bull; Internet DNS Security and Software
+              </section>
+              <section class="box workhistory_entry_item">
+                &bull; Debug and Fix DNS Management application
               </section>
             </section>
           </section>
@@ -330,11 +334,10 @@
                 06/2019 – 09/2019
               </section>
             </section>
-          </section>
-          <section class="workhistory_entry_subtitle">
-            Preparing for next role in firmware or software development while
-            allocating time for family needs
             <section class="workhistory_entry_list">
+              <section class="box workhistory_entry_item">
+                &bull; Preparing for next role while allocating time for family needs
+              </section>
               <section class="box workhistory_entry_item">
                 &bull; Various Node/Javascript and Python projects
               </section>
@@ -354,8 +357,7 @@
               <section class="workhistory_entry_title">
                 <span class="workhistory_entry_title_name"
                   >HACH CHEMICAL (DANAHER CORPORATION)</span
-                >
-                | Loveland, CO
+                > | Loveland, CO
               </section>
               <section class="workhistory_entry_title_pad"></section>
               <section class="workhistory_entry_subtitle">
@@ -529,7 +531,12 @@
                 <span class="learning_entry_title_name"
                   >PROJECT PORTFOLIO SITE</span
                 >
-                | alpiepho.github.io/project-portfolio2/
+                | <a href="https://alpiepho.github.io/project-portfolio/"
+                target="_blank"
+                rel="noreferrer"
+                >​
+                  alpiepho.github.io/project-portfolio/
+                </a>
               </section>
               <section class="learning_entry_subtitle">
                 My ongoing portfolio site showing both work and personal
@@ -543,8 +550,13 @@
             <!-- <section>LEARNINGENTRY</section> -->
             <section class="learning_entry_header">
               <section class="learning_entry_title">
-                <span class="learning_entry_title_name">MY BLOG</span> |
-                alpiepho.github.io/my-blog/
+                <span class="learning_entry_title_name">MY BLOG</span> 
+                | <a href="https://alpiepho.github.io/my-blog2/"
+                target="_blank"
+                rel="noreferrer"
+                >​
+                alpiepho.github.io/my-blog2/
+                </a>
               </section>
               <section class="learning_entry_subtitle">
                 My ongoing blog site. This is built with React and Gatsby.
@@ -556,11 +568,29 @@
             <!-- <section>LEARNINGENTRY</section> -->
             <section class="learning_entry_header">
               <section class="learning_entry_title">
-                <span class="learning_entry_title_name">PODCAST “FREAK”</span>
+                <span class="learning_entry_title_name">"PODCAST “FREAK”</span>
               </section>
               <section class="learning_entry_subtitle">
                 Follow 50+ Podcasts, mostly Software Engineering,
                 Javascript/Python, and lately Practical AI
+              </section>
+            </section>
+          </section>
+
+          <section class="box learning_entry">
+            <!-- <section>LEARNINGENTRY</section> -->
+            <section class="learning_entry_header">
+              <section class="learning_entry_title">
+                <span class="learning_entry_title_name">LINKEDIN LEARNING</span> 
+                | <a href="https://alpiepho.github.io/pup-learning/"
+                target="_blank"
+                rel="noreferrer"
+                >​
+                https://alpiepho.github.io/pup-learning/
+                </a>
+              </section>
+              <section class="learning_entry_subtitle">
+                Taking advantage of Learning videos in variety of subjects.  See my growing list.
               </section>
             </section>
           </section>
