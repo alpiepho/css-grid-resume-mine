@@ -59,6 +59,14 @@
           root.style.setProperty('--color', 'black')
         }
       }
+      function showQr() {
+        window.open( 
+              "./qr.html", "_self");
+      }
+      function showFun() {
+        window.open( 
+              "./fun.html", "_self");
+      }
     </script>
   </head>
   <body class="body">
@@ -67,13 +75,19 @@
       <button class="menu-button" @click="open = true">Menu</button>
       <ul x-show="open" @click.away="open = false">
         <button class="menu-option-button" onclick="gitHub()">
-          Github Repo
+          Repo^
         </button>
         <button class="menu-option-button" onclick="toggleBoxes()">
-          Toggle Boxes
+          Boxes
         </button>
         <button class="menu-option-button" onclick="toggleDark()">
-          Dark Mode
+          Dark
+        </button>
+        <button class="menu-option-button" onclick="showQr()">
+          QR
+        </button>
+        <button class="menu-option-button" onclick="showFun()">
+          Fun
         </button>
       </ul>
     </div>
