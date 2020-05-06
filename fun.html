@@ -1,0 +1,682 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Expanded CSS Whack-a-Mole</title>
+  <style>
+  /* CHANGE to vary the challenge :) */
+  /* in seconds */
+  /* moleShowLong, moleShowNormal, moleShowShort */
+  /* <= 30 */
+  /* 
+  TODO:
+  - refactor original game timer
+  - can we add levels, say slow, medium, fast?
+  - can we add selector for settings and start game?
+  */
+  /* Game timer + animation */
+  /*
+  @keyframes timer {
+    0% { --timer: 20; }
+    5% { --timer: 19; }
+    10% { --timer: 18; }
+    15% { --timer: 17; }
+    20% { --timer: 16; }
+    25% { --timer: 15; }
+    30% { --timer: 14; }
+    35% { --timer: 13; }
+    40% { --timer: 12; }
+    45% { --timer: 11; }
+    50% { --timer: 10; }
+    55% { --timer: 9; }
+    60% { --timer: 8; }
+    65% { --timer: 7; }
+    70% { --timer: 6; }
+    75% { --timer: 5; }
+    80% { --timer: 4; }
+    85% { --timer: 3; }
+    90% { --timer: 2; }
+    95% { --timer: 1; }
+    100% { --timer: 0; }
+  }
+  */
+  @import url("https://fonts.googleapis.com/css?family=Molengo&display=swap");
+  #timer,
+  #moles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 3rem;
+    height: 3rem;
+    text-align: center;
+    animation: timer 30s linear;
+    mix-blend-mode: difference;
+    font-size: 2rem;
+    width: 100%;
+    color: white;
+    background: black;
+  }
+  
+  #moles {
+    top: 3rem;
+    color: black;
+    background: white;
+  }
+  
+  @keyframes timeline {
+    0% {
+      width: 100%;
+      background: green;
+    }
+    50% {
+      width: 50%;
+      brackground: orange;
+    }
+    100% {
+      width: 0%;
+      background: red;
+    }
+  }
+  #timer::before {
+    content: "";
+    width: 100%;
+    background: lightgreen;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: timeline 30s linear;
+    animation-fill-mode: forwards;
+  }
+  
+  #timer::after {
+    counter-reset: timer var(--timer);
+    content: "";
+    /*counter(timer);*/
+    font-weight: bold;
+  }
+  
+  /* Board and moles! */
+  #perspective {
+    perspective: 1000px;
+    width: 69vmin;
+    height: 69vmin;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #canvas {
+    width: 100%;
+    height: 100%;
+    transform: rotateX(60deg);
+    transform-style: preserve-3d;
+  }
+  
+  #board {
+    background: #369;
+    transform-origin: bottom 50%;
+    transform-style: preserve-3d;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    box-shadow: 0 0 0 1vmin black;
+  }
+  
+  #board > div {
+    position: relative;
+    width: 18vmin;
+    height: 18vmin;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 2.5vmin;
+    background: brown;
+    box-shadow: inset 0 0 0 1vmin black, inset 0vmin 15vmin 5vmin brown;
+  }
+  
+  /* for funs: this would make it look nice when the mole is over
+  #board > div:nth-child(1) {
+  box-shadow: inset -1.5vmin -1vmin black, inset 1.5vmin -1vmin black, inset 0 0 0 4in brown;
+  }
+  */
+  @keyframes moleShowLong {
+    0%, 4.9999%, 20%, 100% {
+      height: 0%;
+    }
+    5%, 19.9999% {
+      height: 100%;
+    }
+  }
+  @keyframes moleShowNormal {
+    0%, 4.9999%, 10%, 100% {
+      height: 0%;
+    }
+    5%, 9.9999% {
+      height: 100%;
+    }
+  }
+  @keyframes moleShowShort {
+    0%, 4.9999%, 8%, 100% {
+      height: 0%;
+    }
+    5%, 7.9999% {
+      height: 100%;
+    }
+  }
+  /* This is the actual mole... used an SVG, sorry ;) */
+  #board label {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 0%;
+    overflow: hidden;
+    transform-origin: bottom center;
+    transform: translateY(-50%) rotateX(-60deg);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g fill='none' stroke='black' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'><path fill='brown' d='M 4,102 C 13,62 20,5 47,7 73,8 86,47 95,102' /><path d='M 53,62 C 53,62 53,79 53,79' /><path d='M 27,88 C 41,75 68,77 75,88' /><path fill='%23eeee66' d='M 42,82 C 47,80 59,80 62,81 66,82 63,93 63,93 63,93 53,94 53,92 53,90 52,80 52,80 52,80 53,92 53,92 53,92 43,94 42,92 42,90 41,82 41,82 Z' /><path fill='%23ffffee' d='M 50,53 C 67,72 91,63 88,38 84,13 56,11 48,36 44,21 20,24 18,41 16,57 37,71 50,53' /><circle r='2' cx='35' cy='42' fill='%23000' /><circle r='4' cx='65' cy='41' fill='%23000' /><ellipse rx='10' ry='5' cx='52' cy='56' fill='%23000' /></g></svg>");
+    animation: moleShowNormal 30s linear 2;
+    animation-fill-mode: forwards;
+    z-index: 2;
+    transition: all 0.2s;
+  }
+  
+  /* Animate the moles so they show up at different times */
+  /* 
+  NOTE:
+  - delay first mole              (limit largest negative animation delay)
+  - time for last mole to be hit  (limit shortest negative animation delay)
+  */
+  /* instead of fixed delays, generate random whole and fractions */
+  /* in range -1.x to -(totalTime-1).x */
+  /* 1) hide all moles */
+  #board label[for="mole-1"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-2"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-3"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-4"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-5"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-6"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-7"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-8"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-9"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-10"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-11"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-12"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-13"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-14"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-15"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-16"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-17"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-18"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-19"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-20"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-21"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-22"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-23"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-24"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-25"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-26"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-27"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-28"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-29"] {
+    opacity: 0;
+  }
+  
+  #board label[for="mole-30"] {
+    opacity: 0;
+  }
+  
+  /* 2) set delay and opacity of active moles */
+  #board label[for="mole-1"] {
+    animation-delay: -30.533006127s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-2"] {
+    animation-delay: -19.36661339s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-3"] {
+    animation-delay: -17.4739203932s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-4"] {
+    animation-delay: -2.1991299103s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-5"] {
+    animation-delay: -24.9423585151s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-6"] {
+    animation-delay: -8.6929919757s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-7"] {
+    animation-delay: -3.5572047082s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-8"] {
+    animation-delay: -28.2390032643s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-9"] {
+    animation-delay: -28.6910482189s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-10"] {
+    animation-delay: -7.4181871521s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-11"] {
+    animation-delay: -24.0018389119s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-12"] {
+    animation-delay: -22.0236803731s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-13"] {
+    animation-delay: -5.5353919335s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-14"] {
+    animation-delay: -2.3328669057s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-15"] {
+    animation-delay: -26.7605181081s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-16"] {
+    animation-delay: -14.251463132s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-17"] {
+    animation-delay: -18.8652898021s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-18"] {
+    animation-delay: -2.9363637933s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-19"] {
+    animation-delay: -2.3413066905s;
+    opacity: 1;
+  }
+  
+  #board label[for="mole-20"] {
+    animation-delay: -11.2800904809s;
+    opacity: 1;
+  }
+  
+  /* hide the active moles if their checkbox is checked */
+  #mole-1:checked ~ #perspective [for="mole-1"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-2:checked ~ #perspective [for="mole-2"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-3:checked ~ #perspective [for="mole-3"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-4:checked ~ #perspective [for="mole-4"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-5:checked ~ #perspective [for="mole-5"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-6:checked ~ #perspective [for="mole-6"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-7:checked ~ #perspective [for="mole-7"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-8:checked ~ #perspective [for="mole-8"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-9:checked ~ #perspective [for="mole-9"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-10:checked ~ #perspective [for="mole-10"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-11:checked ~ #perspective [for="mole-11"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-12:checked ~ #perspective [for="mole-12"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-13:checked ~ #perspective [for="mole-13"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-14:checked ~ #perspective [for="mole-14"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-15:checked ~ #perspective [for="mole-15"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-16:checked ~ #perspective [for="mole-16"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-17:checked ~ #perspective [for="mole-17"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-18:checked ~ #perspective [for="mole-18"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-19:checked ~ #perspective [for="mole-19"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  #mole-20:checked ~ #perspective [for="mole-20"] {
+    transform: translateY(-50%) rotateX(-60deg) scale(0);
+  }
+  
+  /* counter for score keeping */
+  body {
+    reset-counter: correct;
+    font-family: Molengo, arial, sans-serif;
+    font-size: 18px;
+  }
+  
+  body input:checked {
+    counter-increment: correct;
+  }
+  
+  body .number::after {
+    content: counter(correct);
+    font-weight: bold;
+  }
+  
+  body .total::after {
+    content: "20";
+    font-weight: bold;
+  }
+  
+  /* hide inputs */
+  input {
+    position: absolute;
+    top: -1000in;
+    left: -1000in;
+  }
+  
+  /* show results + animation */
+  @keyframes showResults {
+    from {
+      width: 0;
+      height: 0;
+    }
+    to {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  #results {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    animation: showResults 0.25s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 33s;
+  }
+  
+  /* decorative */
+  #title {
+    transform-origin: top center;
+    color: #eef7ff;
+    transform: rotateX(-60deg) translate(0, 1vmin);
+    background: #369;
+    background: linear-gradient(#369, #123);
+    box-shadow: 0 0 0 1vmin black;
+    padding: 2vmin;
+    font-size: 7vmin;
+    text-align: center;
+  }
+  
+  #subnote {
+    transform-origin: top center;
+    color: #eef7ff;
+    transform: rotateX(-60deg) translate(0, 1vmin);
+    font-size: 2vmin;
+    text-align: center;
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  </head>
+  <body translate="no">
+  <input type="radio" id="mole-0" name="mole-0">
+  <input type="radio" id="mole-1" name="mole-1">
+  <input type="radio" id="mole-2" name="mole-2">
+  <input type="radio" id="mole-3" name="mole-3">
+  <input type="radio" id="mole-4" name="mole-4">
+  <input type="radio" id="mole-5" name="mole-5">
+  <input type="radio" id="mole-6" name="mole-6">
+  <input type="radio" id="mole-7" name="mole-7">
+  <input type="radio" id="mole-8" name="mole-8">
+  <input type="radio" id="mole-9" name="mole-9">
+  <input type="radio" id="mole-10" name="mole-10">
+  <input type="radio" id="mole-11" name="mole-11">
+  <input type="radio" id="mole-12" name="mole-12">
+  <input type="radio" id="mole-13" name="mole-13">
+  <input type="radio" id="mole-14" name="mole-14">
+  <input type="radio" id="mole-15" name="mole-15">
+  <input type="radio" id="mole-16" name="mole-16">
+  <input type="radio" id="mole-17" name="mole-17">
+  <input type="radio" id="mole-18" name="mole-18">
+  <input type="radio" id="mole-19" name="mole-19">
+  <input type="radio" id="mole-20" name="mole-20">
+  <input type="radio" id="mole-21" name="mole-21">
+  <input type="radio" id="mole-22" name="mole-22">
+  <input type="radio" id="mole-23" name="mole-23">
+  <input type="radio" id="mole-24" name="mole-24">
+  <input type="radio" id="mole-25" name="mole-25">
+  <input type="radio" id="mole-26" name="mole-26">
+  <input type="radio" id="mole-27" name="mole-27">
+  <input type="radio" id="mole-28" name="mole-28">
+  <input type="radio" id="mole-29" name="mole-29">
+  <div id="timer">Time left </div>
+  <div id="moles" class="number">Moles whacked: </div>
+  <div id="perspective">
+  <div id="canvas">
+  <div id="board">
+  <div>
+  <label for="mole-30"></label>
+  <label for="mole-9"></label>
+  <label for="mole-19"></label>
+  <label for="mole-28"></label>
+  </div>
+  <div>
+  <label for="mole-7"></label>
+  <label for="mole-16"></label>
+  <label for="mole-21"></label>
+  </div>
+  <div>
+  <label for="mole-2"></label>
+  <label for="mole-20"></label>
+  <label for="mole-27"></label>
+  </div>
+  <div>
+  <label for="mole-6"></label>
+  <label for="mole-10"></label>
+  <label for="mole-11"></label>
+  </div>
+  <div>
+  <label for="mole-8"></label>
+  <label for="mole-14"></label>
+  <label for="mole-18"></label>
+  <label for="mole-29"></label>
+  </div>
+  <div>
+  <label for="mole-4"></label>
+  <label for="mole-12"></label>
+  <label for="mole-22"></label>
+  </div>
+  <div>
+  <label for="mole-3"></label>
+  <label for="mole-15"></label>
+  <label for="mole-23"></label>
+  </div>
+  <div>
+  <label for="mole-5"></label>
+  <label for="mole-17"></label>
+  <label for="mole-24"></label>
+  </div>
+  <div>
+  <label for="mole-1"></label>
+  <label for="mole-13"></label>
+  <label for="mole-26"></label>
+  </div>
+  </div>
+  <div id="title">CSS Whack-a-Mole</div>
+  <div id="subnote"> (edit CSS to vary challenge)</div>
+  </div>
+  </div>
+  <div id="results">
+  <h1>Game Over</h1>
+  <h2>You got <span class="number"></span> moles out of <span class="total"></span>!</h2>
+  <h3>Thanks for playing!</h3>
+  <p>Reload the page to play again</p>
+  </div>
+  
+  
+  </body></html>
