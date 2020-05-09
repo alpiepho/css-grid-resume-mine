@@ -32,10 +32,6 @@
           }
         }
       }
-      function gitHub() {
-        window.open( 
-              "https://github.com/alpiepho/css-grid-resume-mine", "_blank");
-      }
       function toggleBoxes() {
         var list = document.getElementsByClassName("box");
         //console.log(list);
@@ -67,6 +63,10 @@
         window.open( 
               "./fun.html", "_self");
       }
+      function showCredits() {
+        window.open( 
+              "./credits.html", "_self");
+      }
     </script>
   </head>
   <body class="body">
@@ -74,9 +74,6 @@
       <!-- hamburger menu button -->
       <button class="menu-button" @click="open = true">Menu</button>
       <ul x-show="open" @click.away="open = false">
-        <button class="menu-option-button" onclick="gitHub()">
-          Repo^
-        </button>
         <button class="menu-option-button" onclick="toggleBoxes()">
           Boxes
         </button>
@@ -88,6 +85,9 @@
         </button>
         <button class="menu-option-button" onclick="showFun()">
           Fun
+        </button>
+        <button class="menu-option-button" onclick="showCredits()">
+          Credits
         </button>
       </ul>
     </div>
@@ -646,6 +646,14 @@
           </section>
         </section>
       </section>
+
+
+      <section class="box print_qr">
+        <section class="print_qr_message">Scan for an interactive version:</section>
+        <img class="qr" src="./icons/qr.png"></img>
+      </section>
+
+
     </article>
   </main>
   <script src="./js/index.js"></script>
