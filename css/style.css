@@ -442,6 +442,7 @@ a {
 
 .awards {
   grid-area: awards;
+  margin-bottom: 20px;
 }
 .awards_label {
   /* background-color: gray; */
@@ -498,6 +499,10 @@ a {
     grid-gap: 5px;
   }
 } */
+
+.print_qr {
+  display: none;
+}
 
 .qr {
   margin: auto;
@@ -579,7 +584,15 @@ a {
     padding-right: 8px;
   }
   
-  
+  .print_qr {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+    text-align: center;
+    font-size: 16pt;
+  }
+    
 }
 
 @page {
