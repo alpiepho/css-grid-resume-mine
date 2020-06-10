@@ -508,7 +508,16 @@ a {
   margin: auto;
 }
 
+@media only screen and (max-width: 900px) {
+   .body {
+       width: 86%;
+   }
+}
+
 @media only screen and (max-width: 600px) {
+   .body {
+       width: 86%;
+   }
   .overview_qualificationsarea_list {
     grid-area: overview_qualificationsarea_list;
     margin: auto; /* center horizontally */
