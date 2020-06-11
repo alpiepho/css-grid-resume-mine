@@ -25,6 +25,8 @@ annimation plan:
 body {
   background-color: var(--background-color);
   color: var(--color);
+  max-width: 1000px;
+  margin: auto;
 }
 
 a {
@@ -94,7 +96,7 @@ a {
 
 .header_fullname {
   grid-area: header_fullname;
-  margin: auto; /* center horizontally */
+  margin: auto; 
   font-size: 32pt;
   font-weight: bold;
   color: var(--label-color);
@@ -108,8 +110,39 @@ a {
 
 .header_contact {
   grid-area: header_contact;
-  margin: auto; /* center horizontally */
+  margin: auto; 
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 0px;
 }
+
+.header_contact_cell {
+  margin: auto; 
+  text-align: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.header_contact_address {
+  margin: auto; 
+  text-align: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.header_contact_email {
+  margin: auto; 
+  text-align: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.header_contact_linkedin {
+  margin: auto; 
+  text-align: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
 
 .header_contact_symbol {
   color: var(--theme-color-inner);
@@ -120,7 +153,7 @@ a {
   /* background-color: gray; */
   background-color: var(--theme-color);
   border-color: transparent;
-  width: 102%;
+  width: 100%;
   height: 1px;
   margin-left: -10px;
   margin-top: -4px;
@@ -149,7 +182,7 @@ a {
 
 .overview_titlearea_title {
   grid-area: overview_titlearea_title;
-  margin: auto; /* center horizontally */
+  margin: auto; 
   font-size: 20pt;
   font-weight: bold;
   color: var(--label-color);
@@ -163,7 +196,11 @@ a {
 
 .overview_titlearea_subtitle {
   grid-area: overview_titlearea_subtitle;
-  margin: auto; /* center horizontally */
+  margin: auto; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 20px;
   font-size: 16pt;
   font-weight: bold;
   color: var(--label-color);
@@ -174,6 +211,11 @@ a {
   animation-iteration-count: 1;
   animation-direction: alternate;
   width: 600px; /* NOTE: you may need to play with this if fields wrap to next line */
+}
+
+.overview_titlearea_subtitle_part {
+  white-space: nowrap;
+  text-align: center;
 }
 
 /* OVERVIEW SUMMARY AREA */
@@ -188,12 +230,12 @@ a {
 
 .overview_summaryarea_description {
   grid-area: overview_summaryarea_description;
-  margin: auto; /* center horizontally */
+  margin: auto; 
 }
 
 .overview_summaryarea_list {
   grid-area: overview_summaryarea_list;
-  margin: auto; /* center horizontally */
+  margin: auto; 
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0px;
@@ -213,7 +255,7 @@ a {
 .overview_qualificationsarea {
   padding: 0px;
   grid-area: overview_qualificationsarea;
-  margin: auto; /* center horizontally */
+  margin: auto; 
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -224,7 +266,7 @@ a {
 
 .overview_qualificationsarea_title {
   grid-area: overview_qualificationsarea_title;
-  margin: auto; /* center horizontally */
+  margin: auto; 
   font-size: 14pt;
   font-weight: bold;
   color: var(--label-color);
@@ -232,7 +274,7 @@ a {
 
 .overview_qualificationsarea_list {
   grid-area: overview_qualificationsarea_list;
-  margin: auto; /* center horizontally */
+  margin: auto; 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -254,7 +296,7 @@ a {
 .overview_skillsarea {
   padding: 0px;
   grid-area: overview_skillsarea;
-  margin: auto; /* center horizontally */
+  margin: auto; 
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -265,7 +307,7 @@ a {
 
 .overview_skillsarea_title {
   grid-area: overview_skillsarea_title;
-  margin: auto; /* center horizontally */
+  margin: auto; 
   font-size: 14pt;
   font-weight: bold;
   color: var(--label-color);
@@ -273,7 +315,7 @@ a {
 
 .overview_skillsarea_list {
   grid-area: overview_skillsarea_list;
-  margin: auto; /* center horizontally */
+  margin: auto; 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 0px;
@@ -512,15 +554,31 @@ a {
    .body {
        width: 86%;
    }
+   .header_contact {
+    grid-area: header_contact;
+    margin: auto; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 0px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-   .body {
-       width: 86%;
-   }
+  .body {
+    width: 86%;
+  }
+  .overview_titlearea_subtitle {
+    grid-area: overview_titlearea_subtitle;
+    margin: auto; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 0px;
+  }
   .overview_qualificationsarea_list {
     grid-area: overview_qualificationsarea_list;
-    margin: auto; /* center horizontally */
+    margin: auto; 
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -568,6 +626,7 @@ a {
   /* remove any screen only styles, for example link underline */
   a {
     text-decoration: none;
+    white-space: nowrap;
   }
   
   .menu-button {
