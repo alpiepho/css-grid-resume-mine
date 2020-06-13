@@ -25,10 +25,10 @@
         //console.log(list);
         //console.log(list.length);
         for (var i = 0; i < list.length; i++) {
-          if (list[i].style.boxShadow == "none") {
+          if (list[i].style.boxShadow == "") {
             list[i].style.boxShadow = "0 5px 9px 0 rgba(0, 0, 0, 0.35)";
           } else {
-            list[i].style.boxShadow = "none";
+            list[i].style.boxShadow = "";
           }
         }
       }
@@ -37,16 +37,16 @@
         //console.log(list);
         //console.log(list.length);
         for (var i = 0; i < list.length; i++) {
-          if (list[i].style.boxShadow == "none") {
+          if (list[i].style.boxShadow == "") {
             list[i].style.boxShadow = "0 5px 9px 0 rgba(0, 0, 0, 0.35)";
           } else {
-            list[i].style.boxShadow = "none";
+            list[i].style.boxShadow = "";
           }
         }
       }
       function toggleDark() {
         const root = document.documentElement;
-        if (root.style.getPropertyValue('--background-color') == 'white') {
+        if (root.style.getPropertyValue('--background-color') == '' || root.style.getPropertyValue('--background-color') == 'white') {
           root.style.setProperty('--background-color', '#111111')
           root.style.setProperty('--color', '#aaaaaa')
         }
