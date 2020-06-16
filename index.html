@@ -43,6 +43,7 @@
             list[i].style.boxShadow = "";
           }
         }
+        document.querySelector('.menu-button').click()
       }
       function toggleDark() {
         const root = document.documentElement;
@@ -54,6 +55,7 @@
           root.style.setProperty('--background-color', 'white')
           root.style.setProperty('--color', 'black')
         }
+        document.querySelector('.menu-button').click()
       }
       function showQr() {
         window.open( 
@@ -647,13 +649,13 @@
       <section class="box awards">
         <section class="awards_label">AWARDS</section>
         <hr class="awards_hr" />
-        <section class="box awards_title">AWARDS</section>
+        <!-- <section class="box awards_title">AWARDS</section> -->
         <!-- <section>AWARDS</section> -->
         <section class="box awards_list">
           <section class="box awards_entry">
-            Co-Author on 6 U.S. Patents, see LinkedIn page for full details
+            Co-Author on 6 U.S. Patents, (see LinkedIn page for full details):
           </section>
-          <section class="box awards_entry">&nbsp;</section>
+          <!-- <section class="box awards_entry">&nbsp;</section> -->
           <section class="box awards_entry">
             Automatic Configuration System and Method, Jun 8, 2010, us 7,734,735
           </section>
@@ -681,8 +683,8 @@
       </section>
 
 
+      <section class="print_qr_message">&nbsp;&nbsp;Scan for an interactive version:</section>
       <section class="box print_qr">
-        <section class="print_qr_message">Scan for an interactive version:</section>
         <img class="qr" src="./icons/qr.png"></img>
       </section>
 
