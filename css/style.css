@@ -112,9 +112,7 @@ a {
   grid-area: header_contact;
   margin: auto; 
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: 1fr; */
   grid-gap: 0px;
 }
 
@@ -360,8 +358,8 @@ a {
 .workhistory_entry_header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   grid-gap: 0px;
+  white-space: nowrap;
 }
 
 .workhistory_entry_title {
@@ -508,6 +506,7 @@ a {
 }
 
 .awards_list {
+  padding-bottom: 150px;
 }
 
 .awards_entry {
@@ -571,6 +570,14 @@ a {
   }
   .overview_skillsarea_list {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .workhistory_entry_header {
+    grid-template-columns: 1fr;
+    white-space: wrap;
+  }
+  .workhistory_entry_dates {
+    text-align: left;
+    margin-bottom: 5px;
   }
   .workhistory_label {
     width: 30%;
@@ -665,15 +672,20 @@ a {
     padding-right: 8px;
   }
   
+  .awards_list {
+    padding-bottom: 0px;
+  }
+
   .print_qr {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 250px;
     text-align: center;
     font-size: 16pt;
+    transform: scale(0.6);
+    white-space: nowrap;
+    margin-top: -70px;
   }
-    
 }
 
 @page {
