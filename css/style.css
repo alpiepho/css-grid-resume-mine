@@ -539,6 +539,10 @@ a {
   }
 } */
 
+.print_qr_message {
+  display: none;
+}
+
 .print_qr {
   display: none;
 }
@@ -674,6 +678,10 @@ a {
   
   .awards_list {
     padding-bottom: 0px;
+  }
+
+  .print_qr_message {
+    display: block;
   }
 
   .print_qr {
