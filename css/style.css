@@ -597,6 +597,12 @@ a {
   }
 }
 
+@media only screen and (max-width: 420px) {
+  .workhistory_entry_title_name420 {
+    white-space: normal;
+  }
+}
+
 @media only screen and (max-width: 400px) {
   .overview_summaryarea_description {
     white-space: unset;
@@ -606,6 +612,18 @@ a {
   }
   .overview_skillsarea_list {
     grid-template-columns: 1fr 1fr;
+  }
+  .overview {
+    width: 80%;
+  }
+  .workhistory {
+    width: 80%;
+  }
+  .learning {
+    width: 80%;
+  }
+  .awards {
+    width: 80%;
   }
 }
 
