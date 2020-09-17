@@ -598,6 +598,12 @@ a {
 }
 
 @media only screen and (max-width: 400px) {
+  .overview_summaryarea_description {
+    white-space: unset;
+  }
+  .overview_qualificationsarea_list {
+    grid-template-columns: 1fr;
+  }
   .overview_skillsarea_list {
     grid-template-columns: 1fr 1fr;
   }
