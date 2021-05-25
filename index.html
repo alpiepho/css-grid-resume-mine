@@ -69,6 +69,10 @@
         window.open( 
               "./credits.html", "_self");
       }
+      function showStarwars() {
+        var element = document.getElementById("resume");
+        element.classList.add("starwars");
+      }
     </script>
   </head>
   <body class="body">
@@ -91,10 +95,13 @@
         <button class="menu-option-button" onclick="showLinks()">
           Links
         </button>
+        <button class="menu-option-button" onclick="showStarwars()">
+          Starwars
+        </button>
       </ul>
     </div>
     <main>
-    <article class="resume">
+    <article id="resume" class="resume">
       <section class="box header">
         <!-- <section>HEADER</section> -->
         <section class="box header_fullname">AL PIEPHO</section>
@@ -297,7 +304,7 @@
             <!-- <section>WORKENTRY</section> -->
             <section class="workhistory_entry_header">
               <section class="workhistory_entry_title">
-                <span class="workhistory_entry_title_name">KEYSIIGHT TECHNOLOGY</span>
+                <span class="workhistory_entry_title_name">KEYSIGHT TECHNOLOGY</span>
                 ​<span class="workhistory_entry_title_name420">| Loveland, CO</span>
               </section>
               <section class="workhistory_entry_title_pad"></section>

@@ -729,3 +729,25 @@ a {
   size: A4 portrait;
 
 }
+
+
+@keyframes starwars {
+  0% {
+    transform:	perspective(1600px) rotateX(40deg) translateY(1000px);
+    transform-origin:	center center 0px;
+  }
+  95% {
+    transform:	perspective(1600px) rotateX(40deg) translateY(-2000px);
+    transform-origin:	center center 0px;
+  }
+  100% {
+    transform:	none;
+  }
+}
+
+.starwars {
+  animation: starwars;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+}
+
