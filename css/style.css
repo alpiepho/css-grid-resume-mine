@@ -646,11 +646,11 @@ a {
 
 @keyframes starwars_mobile {
   0% {
-    transform:	perspective(7000px) rotateX(60deg) translateY(-1000px);
+    transform:	perspective(1000px) rotateX(20deg) translateY(800px) ;
     transform-origin:	center center 0px;
   }
   95% {
-    transform:	perspective(7000px) rotateX(60deg) translateY(-8000px);
+    transform:	perspective(1000px) rotateX(20deg) translateY(-8000px) ;
     transform-origin:	center center 0px;
   }
   100% {
