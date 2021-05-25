@@ -71,7 +71,10 @@
       }
       function showStarwars() {
         var element = document.getElementById("resume");
-        element.classList.add("starwars");
+        if (element.classList.contains("starwars"))
+          element.classList.remove("starwars");
+        else
+          element.classList.add("starwars");
       }
     </script>
   </head>
