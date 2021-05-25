@@ -630,12 +630,55 @@ a {
   }
 }
 
+@keyframes starwars_web {
+  0% {
+    transform:	perspective(1600px) rotateX(40deg) translateY(1000px);
+    transform-origin:	center center 0px;
+  }
+  95% {
+    transform:	perspective(1600px) rotateX(40deg) translateY(-3000px);
+    transform-origin:	center center 0px;
+  }
+  100% {
+    transform:	none;
+  }
+}
+
+@keyframes starwars_mobile {
+  0% {
+    transform:	perspective(7000px) rotateX(60deg) translateY(-1000px);
+    transform-origin:	center center 0px;
+  }
+  95% {
+    transform:	perspective(7000px) rotateX(60deg) translateY(-8000px);
+    transform-origin:	center center 0px;
+  }
+  100% {
+    transform:	none;
+  }
+}
+
+.starwars {
+  animation: starwars_web;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+}
+
 @media only screen and (max-width: 300px) {
   .overview_qualificationsarea_list {
     grid-template-columns: 1fr;
   }
   .overview_skillsarea_list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .starwars {
+    width: 110%;
+    animation: starwars_mobile;
+    animation-duration: 10s;
+    animation-timing-function: linear;
   }
 }
 
@@ -728,26 +771,5 @@ a {
   margin: 0cm;
   size: A4 portrait;
 
-}
-
-
-@keyframes starwars {
-  0% {
-    transform:	perspective(1600px) rotateX(40deg) translateY(1000px);
-    transform-origin:	center center 0px;
-  }
-  95% {
-    transform:	perspective(1600px) rotateX(40deg) translateY(-2000px);
-    transform-origin:	center center 0px;
-  }
-  100% {
-    transform:	none;
-  }
-}
-
-.starwars {
-  animation: starwars;
-  animation-duration: 10s;
-  animation-timing-function: linear;
 }
 
