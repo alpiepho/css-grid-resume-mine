@@ -555,6 +555,15 @@ a {
   margin: auto;
 }
 
+.print_hidden1 {
+  display: none;
+}
+
+.print_hidden {
+  display: none;
+}
+
+
 @media only screen and (max-width: 900px) {
   .header_contact {
     grid-template-columns: 1fr;
@@ -770,6 +779,17 @@ a {
     white-space: nowrap;
     margin-top: -70px;
   }
+
+  .print_hidden {
+    display: block;
+    color: #ffffff;
+    font-size: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: -45px;  
+  }
+
 }
 
 @page {
